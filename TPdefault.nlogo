@@ -23,10 +23,11 @@ to setup
     ]
 
    ask n-of obstaculos patches ;;Cria obstaculos
-
-
-
   [ set pcolor white ]
+
+     ask n-of carregadores patches ;;Cria obstaculos
+  [ set pcolor blue ]
+
     ask center-patch [
     set pcolor green
     ask patch-at 1 0 [ set pcolor green ]
@@ -90,7 +91,9 @@ to moveAsp
     let ahead-color [pcolor] of ahead-destino
     let behind-color [pcolor] of behind-destino
 
-  if sleep != 0 [set sleep (sleep - 1 ) ]
+  if sleep != 0 [set sleep (sleep - 1 )
+  set energy 100
+  ]
 
   if sleep = 0[
 
@@ -347,7 +350,6 @@ to moveAsp
 
 
 end
-
 
 
 @#$#@#$#@
